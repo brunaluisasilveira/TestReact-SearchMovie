@@ -1,4 +1,4 @@
-import React, { useState, useRef, useEffect } from 'react'
+import React, { useState, useRef } from 'react'
 
 import axios from 'axios'
 import Vetor3 from '../../assets/vetor3.png'
@@ -15,7 +15,8 @@ export const Search = () => {
     const [message, setMessage] = useState()
     const inputMovie = useRef()
 
-    async function addNewMovie() {
+
+    async function addNewMovie() { // eslint-disable-line no-unused-vars
 
         const { data: newMovie } = await axios.post(" http://www.omdbapi.com/?apikey=69a55f17", {
             filme: inputMovie.current.value,
@@ -23,6 +24,7 @@ export const Search = () => {
 
         setMovies([...movies, newMovie])
     }
+
 
     async function fetchMovies() {
         const result = await axios.get(`http://www.omdbapi.com/?apikey=69a55f17&t=${title}`)

@@ -27,7 +27,7 @@ export const Detail = () => {
             await fetchMovieDetail()
         }
         getDetail()
-    }, [])
+    })
 
 
     return (
@@ -39,7 +39,7 @@ export const Detail = () => {
             <ContainerItens>
 
                 <>
-                    <img src={data.Poster} />
+                    <img src={data.Poster} alt='poster'/>
                 </>
 
                 <H2>
